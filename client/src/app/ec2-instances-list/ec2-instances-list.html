@@ -1,0 +1,30 @@
+<div class="columns">
+  <div class="column is-12">
+    <div class="table-container">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Instance ID</th>
+            <th>Type</th>
+            <th>State</th>
+            <th>Region</th>
+            <th>Public IP</th>
+            <th>Private IP</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let instance of instances">
+            <td>{{instance.Tags[0].Value}}</td>
+            <td>{{instance.InstanceId}}</td>
+            <td>{{instance.InstanceType}}</td>
+            <td>{{instance.State.Name}}</td>
+            <td>{{instance.Placement.AvailabilityZone}}</td>
+            <td>{{instance.PublicIpAddress}}</td>
+            <td>{{instance.PrivateIpAddress}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
